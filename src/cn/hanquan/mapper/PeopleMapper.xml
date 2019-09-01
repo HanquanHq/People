@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 填写实例化的包名+类名，在java代码中调用语句的时候使用 -->
+<mapper namespace="cn.hanquan.mapper.PeopleMapper">
+	
+	<!-- limit分页查询 -->	
+	<select id="selByPage" resultType="People" parameterType="map">
+		select * from people limit #{pageStart}, #{pageSize}
+	</select>
+	
+	<!-- 查询总数 -->
+	<select id="selCount" resultType="int">
+		select count(*) from people
+	</select>
+	
+</mapper>
